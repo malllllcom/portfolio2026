@@ -36,6 +36,9 @@
 
         /* 終極白邊修復與實體圖層 */
         .page { background-color: transparent !important; box-shadow: none !important; }
+        /* 針對那兩頁沒有圖片的內頁，強制補回紙張的米白色與一點點內陰影 */
+        .blank-page { background-color: #fdfcf7 !important; box-shadow: inset 0 0 20px rgba(0,0,0,0.05) !important; }
+
         .base-img, .tracing-wrapper { width: 100.8%; height: 100.8%; top: -0.4%; left: -0.4%; object-fit: cover; }
         .page-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; mix-blend-mode: multiply; }
 
@@ -73,17 +76,15 @@
 </head>
 <body>
 
-    <!-- 導覽列：正式的藝術家分類學 -->
     <nav class="side-nav">
         <a href="info.html">INFO</a>
         <a href="moving-image.html">MOVING IMAGE</a>
         <a href="index.html">ZINE</a>
     </nav>
 
-    <!-- 實體書場景 -->
     <div class="book-scene">
         <div class="book" id="zine-book">
-            <div class="leaf"><div class="page front"><img src="image/cover.jpg" class="base-img" alt="封面"></div><div class="page back"></div></div>
+            <div class="leaf"><div class="page front"><img src="image/cover.jpg" class="base-img" alt="封面"></div><div class="page back blank-page"></div></div>
             <div class="leaf"><div class="page front"><img src="image/page1.jpg" class="base-img" alt="Page 1"></div><div class="page back"><img src="image/page2.jpg" class="base-img" alt="Page 2"><div class="tracing-wrapper bound-left"><div class="tracing-texture"></div><img src="image/page3.png" class="tracing-img" alt="Page 3"><div class="tracing-gloss"></div></div></div></div>
             <div class="leaf"><div class="page front"><img src="image/page5.jpg" class="base-img" alt="Page 5"><div class="tracing-wrapper bound-right"><div class="tracing-texture"></div><img src="image/page4.png" class="tracing-img" alt="Page 4"><div class="tracing-gloss"></div></div></div><div class="page back"><img src="image/page6.jpg" class="base-img" alt="Page 6"></div></div>
             <div class="leaf"><div class="page front"><img src="image/page7.jpg" class="base-img" alt="Page 7"></div><div class="page back"><img src="image/page8.jpg" class="base-img" alt="Page 8"></div></div>
@@ -96,11 +97,10 @@
             <div class="leaf"><div class="page front"><img src="image/page21.jpg" class="base-img" alt="Page 21"></div><div class="page back"><img src="image/page22.jpg" class="base-img" alt="Page 22"></div></div>
             <div class="leaf"><div class="page front"><img src="image/page23.jpg" class="base-img" alt="Page 23"></div><div class="page back"><img src="image/page24.jpg" class="base-img" alt="Page 24"></div></div>
             <div class="leaf"><div class="page front"><img src="image/page25.jpg" class="base-img" alt="Page 25"></div><div class="page back"><img src="image/page26.jpg" class="base-img" alt="Page 26"></div></div>
-            <div class="leaf"><div class="page front"></div><div class="page back"><img src="image/backcover.jpg" class="base-img" alt="封底"></div></div>
+            <div class="leaf"><div class="page front blank-page"></div><div class="page back"><img src="image/backcover.jpg" class="base-img" alt="封底"></div></div>
         </div>
     </div>
 
-    <!-- 工具列 -->
     <div class="material-palette">
         <div id="tool-none" class="material-btn" onclick="setZineTool('none')" title="翻閱模式"><svg viewBox="0 0 24 24"><path d="M18 8a2 2 0 1 0-4 0v5.6L12.5 12a2.3 2.3 0 0 0-3.3 0 2.4 2.4 0 0 0 0 3.4l5.3 5.3c.8.8 2 1.3 3.2 1.3H19a4 4 0 0 0 4-4v-7a2 2 0 1 0-4 0v2"/></svg></div>
         <div id="tool-pen" class="material-btn active" onclick="setZineTool('pen')" title="碳粉筆"><svg viewBox="0 0 24 24"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div>
