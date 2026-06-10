@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHIHCHEN HUANG — MOVING IMAGE</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body { background-color: #f7f5f0; margin: 0; padding: 0; overflow-x: hidden; }
+
+        /* 左側導航選單：切齊書本上緣、藍色貼齊底塊 */
+        .side-nav {
+            position: fixed; left: 30px; top: 7.5vh; z-index: 10000; display: flex; flex-direction: column; gap: 12px; 
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; font-size: 15px; letter-spacing: 0.5px;
+        }
+        .side-nav a { 
+            text-decoration: none; color: #0000FF; align-self: flex-start; transition: none; 
+            padding: 0; line-height: 0.8; background-color: transparent;
+        }
+        .side-nav a:hover, .side-nav a.active { background-color: #0000FF; color: #0000FF; }
+
+        /* 影片排版容器 */
+        .video-container {
+            display: flex; flex-direction: column; align-items: center; gap: 100px; 
+            padding: 7.5vh 20px 100px 20px; margin-left: 200px; 
+        }
+        
+        .video-item {
+            display: flex; flex-direction: column; width: 70vw; max-width: 800px;     
+        }
+
+        .video-wrapper {
+            width: 100%; aspect-ratio: 16 / 9; background-color: #000; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 16px; 
+        }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+        /* 影片資訊文字 */
+        .video-info {
+            display: flex; flex-direction: column; gap: 6px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .video-title {
+            font-size: 15px; font-weight: bold; color: #1a1a1a; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1;
+        }
+        .video-tags {
+            font-size: 13px; color: #0000FF; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1;
+        }
+
+        @media (max-width: 800px) {
+            .video-container { margin-left: 0; padding-top: 100px; gap: 80px; }
+            .video-item { width: 90vw; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="side-nav">
+        <a href="info.html">INFO</a>
+        <a href="moving-image.html" class="active">MOVING IMAGE</a>
+        <a href="index.html">ZINE</a>
+    </nav>
+
+    <div class="video-container">
+        
+        <!-- 影片 1 -->
+        <div class="video-item">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/DtWbzhl8wXg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">THE DIGITAL BLACKBILE (2026)</div>
+                <div class="video-tags">#EXPERIMENTAL DOCUMENTARY</div>
+            </div>
+        </div>
+
+        <!-- 影片 2 -->
+        <div class="video-item">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/TXRBJR6PuPg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">RUBBER (2024)</div>
+                <div class="video-tags">#EXPERIMENTAL FILM</div>
+            </div>
+        </div>
+
+        <!-- 影片 3 -->
+        <div class="video-item">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dgWeT6d-FDI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">BLINGBLING (2024)</div>
+                <div class="video-tags">#MUSIC VIDEO</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
